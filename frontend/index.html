@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel - Share your visual inspiration</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/gallery.css" />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <!-- Logo/Brand -->
+        <div class="brand">
+          <h1>
+            <a href="index.html" style="text-decoration: none; color: inherit"
+              >carousel</a
+            >
+          </h1>
+        </div>
+
+        <!-- Upload Button & Profile -->
+        <div class="header-actions">
+          <button
+            class="upload-btn"
+            onclick="window.location.href='upload.html'"
+          >
+            Upload
+          </button>
+          <div class="profile-avatar">
+            <div class="avatar-circle"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <!-- Main Content -->
+<main class="main-content">
+    <!-- Gallery Grid -->
+    <div class="gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be loaded here by JavaScript -->
+        </div>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Carousel. Share your visual inspiration.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery.js"></script>
+  </body>
+</html>

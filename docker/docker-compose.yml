@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.backend
+    image: carousel/backend:latest
+    container_name: carousel-backend
+    ports:
+      - "5001:5000"
+    environment:
+      - MONGODB_URI=mongodb://carousel-mongo:27017/carousel
+      - FLASK_ENV=development
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      - mongo
+    networks:
+      - carousel-network
+
+  frontend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.frontend
+    image: carousel/frontend:latest
+    container_name: carousel-frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+    networks:
+      - carousel-network
+
+  mongo:
+    image: mongo:5.0
+    container_name: carousel-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - carousel-network
+
+volumes:
+  mongo_data:
+  uploads_data:
+
+networks:
+  carousel-network:
+    driver: bridge

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Carousel</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/upload.css">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">carousel</a></h1>
+            </div>
+            
+            <!-- Actions -->
+            <div class="header-actions">
+                <div class="profile-avatar">
+                    <div class="avatar-circle"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="upload-container">
+
+            <!-- Drop Zone -->
+            <div class="drop-zone" id="dropZone">
+                <div class="drop-zone-content">
+                    <div class="drop-zone-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21,15 16,10 5,21"></polyline>
+                        </svg>
+                    </div>
+                    <div class="drop-zone-text">
+                        <h3>Drop your images here</h3>
+                        <p>or click to browse your files</p>
+                        <p class="file-info">JPEG, PNG, GIF, WebP • Max 10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Input (Hidden) -->
+            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+
+            <!-- Upload Actions -->
+            <div class="upload-actions">
+                <button class="btn btn-secondary" id="browseBtn">
+                    Browse Files
+                </button>
+                <button class="btn btn-secondary" id="clearAllBtn" disabled>
+                    Clear All
+                </button>
+                <button class="btn btn-primary" id="startUploadBtn" disabled>
+                    Upload 0 file(s)
+                </button>
+            </div>
+
+            <!-- Upload Queue -->
+            <div class="upload-queue" id="uploadQueue" style="display: none;">
+                <h4>Upload Queue</h4>
+                <div class="upload-list" id="uploadList">
+                    <!-- Upload items will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/upload.js"></script>
+</body>
+</html>
